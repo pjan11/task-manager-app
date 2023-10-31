@@ -1,0 +1,13 @@
+button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.25rem !important;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.total-time-container {
+    margin-left: 5rem;
+}

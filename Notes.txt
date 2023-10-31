@@ -1,0 +1,49 @@
+To Do - Stories
+X 1) Right now, tasks are just strings in an array -> Turn those tasks into TaskItem objects and have the array store those objects
+X 2) Implement the routing aspect
+X 3) Turn this into my daily planner app where I write down the hours I have left for my day, each item and it's duration
+X 4) Input for total hours to plan for the day
+X 5) A rounded display for how much time is left in the day to do my things
+X 6) Have a list of open and a list of completed
+_ 7) Have a list of previous task lists
+X 8) Total the amount of time for open tasks
+X 9) Turn the list items into cards
+X 10) Turn duration input into a decimal input
+X 11) Update open and closed lists into grids
+X 12) Update css to be scss
+X 13) Move Open Task time total next to the remaining time display
+X 14) Add some responsive behavior
+_ 15) Input validation
+_ 16) Update home to store all of the daily lists
+_ 17) Create a new page to show the current 'home' screen
+? 18) Use Postman to test the new API's - Issues with PostMan
+X 19) Create apis for create, delete, update or tasks
+X 20) Create apis for CRUD for the lists
+
+
+Notes on daily tasks
+=======================
+* Created the basic react app components
+* TaskItems, Tasks, and lists
+* Updated the TaskItem Component to have Title, duration, and status
+* Updated Lists to be 2 Lists, Open and closed
+* Updated the interface to have a TaskList to contain both open and closed lists
+* Created the TaskForm to input new Tasks
+* The TaskForm and Task Item held the duration in a time format
+* TotalTime Component was added to display the remaining time for the day
+* OpenTaskList added up all of the durations from the tasks in OpenTaskList
+* Closing a task updated the status and moved it to the closed list
+* Total Open task time was moved to be part of the totalTime components
+* TotalTime and task duration input was changed to a decimal input
+* Styles were updated and initial responsive behavior was added
+* Adding a python backend to store the tasks and daily lists into tables
+* Working on testing the task create api, using an async function
+* Dealing with CORS issues because the app is on port 3000 and the server is on port 5000
+* Trying to use proxy in the package.json and installing flask-cors
+* Finally fixed the server section and it looks like the POST task route worked
+*** Review Python and the server files to understand the completed
+* Use dbeaver to troubleshoot the database table
+* Created a new connection to a SQLite db and the path was to the db in my app folder
+* Use the network tab to see the issues in the api request
+* Redid all of the server code and now that works
+* Once the task is created successfully, the UI updates

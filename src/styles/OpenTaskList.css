@@ -1,0 +1,14 @@
+.task-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Adjust the minmax width as needed */
+    gap: 1rem;
+    /* Adjust the gap as needed */
+}
+
+/* Media query for screens with a max-width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+    .task-card-list {
+        grid-template-columns: 1fr;
+    }
+}

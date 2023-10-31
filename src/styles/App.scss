@@ -1,0 +1,51 @@
+$primary: #90ADC6;
+$primary-light: lighten($primary, 30);
+$secondary: #E9EAEC;
+$tertiary: #FAD02C;
+$quarternary: #333652;
+
+$success: rgb(29, 77, 25);
+$danger: rgb(182, 0, 0);
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.success {
+    color:$success;
+}
+
+.danger {
+    color: $danger;
+}
+
+.primary {
+    color: $primary !important;
+}
+
+.secondary {
+    color: $secondary;
+}
+
+.tertiary {
+    color: $tertiary;
+}
+
+.quarternary {
+    color: $quarternary;
+}
+
+.bg-primary {
+    background-color: $primary !important;
+}
+
+.bg-primary-light {
+    background-color: $primary-light !important;
+}
+
+.bg-quarternary {
+    background-color: $quarternary !important;
+}
