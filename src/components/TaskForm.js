@@ -28,11 +28,10 @@ function TaskForm({ addTask }) {
         if (task.title.trim === '') return;
         try{
             const response = await postTask(task);
-            console.log(response);
             addTask(task);
             setTask({ title: '', status: 'Open', duration: '', list_id: 0 });
         } catch (error) {
-            console.log(console.error);
+            console.log(error);
         }
     };
 

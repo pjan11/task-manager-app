@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import TotalTime from './TotalTime';
 import { Grid } from '@mui/material';
 
-function TaskView() {
+function TaskView({ selectedListId }) {
     const [closedTasks, setClosedTasks] = useState([]);
     const [endTime, setEndTime] = useState('24:00');
     const [openTaskTime, setOpenTaskTime] = useState(0);
@@ -44,6 +44,22 @@ function TaskView() {
 
         setRemainingTime((hours + (minutes / 60)).toFixed(2));
     }
+
+    const tasksByList = async (listId) => {
+        try {
+            const response = await fetch(`api/tasks/by-list/${listId}`);
+            if (response.ok) {
+                const data = await response.json();
+                setTasks(data);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        if (selectedListId !== null || selectedListId !== undefined) tasksByList(selectedListId);
+    }, [selectedListId])
 
     return (
         <Grid container>

@@ -5,7 +5,7 @@ X 3) Turn this into my daily planner app where I write down the hours I have lef
 X 4) Input for total hours to plan for the day
 X 5) A rounded display for how much time is left in the day to do my things
 X 6) Have a list of open and a list of completed
-_ 7) Have a list of previous task lists
+X 7) Have a list of previous task lists
 X 8) Total the amount of time for open tasks
 X 9) Turn the list items into cards
 X 10) Turn duration input into a decimal input
@@ -14,11 +14,15 @@ X 12) Update css to be scss
 X 13) Move Open Task time total next to the remaining time display
 X 14) Add some responsive behavior
 _ 15) Input validation
-_ 16) Update home to store all of the daily lists
-_ 17) Create a new page to show the current 'home' screen
+X 16) Update home to store all of the daily lists
+X 17) Create a new page to show the current 'home' screen
 ? 18) Use Postman to test the new API's - Issues with PostMan
 X 19) Create apis for create, delete, update or tasks
 X 20) Create apis for CRUD for the lists
+_ 21) Make new list button float somewhere
+_ 22) Put Completed Tasks below Open tasks?
+_ 23) Add an update time button
+_ 24) Update from hooks to signals
 
 
 Notes on daily tasks
@@ -47,3 +51,7 @@ Notes on daily tasks
 * Use the network tab to see the issues in the api request
 * Redid all of the server code and now that works
 * Once the task is created successfully, the UI updates
+* Added code to Git
+* Updated home to have a ListView on the left and the TaskView on the Right
+* ListView has a list of all of the lists in descending order and a button at the end to add a new list
+* Created a dialog for the new list name form

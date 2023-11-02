@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
-import TaskView from './components/TaskView';
-import ListView from './components/ListView';
+import Home from './components/Home';
 import './styles/App.scss';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -40,14 +39,8 @@ function App() {
                     <Route 
                         path="/" 
                         element={
-                            <TaskView />
+                            <Home />
                         } 
-                    />
-                    <Route
-                        path="/lists"
-                        element={
-                            <ListView />
-                        }
                     />
                     {/* <Route path="/tasks" exact element={<TaskList tasks={tasks} closedTasks={closedTasks} closeTask={closeTask} />} />
                     <Route path="/tasks/add" element={<TaskForm addTask={addTask} tasks={tasks} />} /> */}

@@ -22,7 +22,12 @@ def create_list():
         new_list = List(name=data['name'])
         db.session.add(new_list)
         db.session.commit()
-        return jsonify({'message': 'List created'}), 201
+        new_list_dict = {
+            'id': new_list.id,
+            'name': new_list.name,
+            # Add any other attributes you want to include
+        }
+        return jsonify({'message': 'List created', 'list': new_list_dict}), 201
     except Exception as e:
         return jsonify({'error': 'An error occurred while creating the list.' + str(e)}), 409
 

@@ -17,7 +17,7 @@ def get_all_tasks():
 def get_all_tasks_by_list_id(list_id):
     tasks = Task.query.filter_by(list_id=list_id).all()
 
-    task_list = [{'id': task.id, 'title': task.title, 'status': task.status, 'list_id': task.list_id} for task in tasks]
+    task_list = [{'id': task.id, 'title': task.title, 'status': task.status, 'duration': task.duration, 'list_id': task.list_id} for task in tasks]
 
     return jsonify(task_list)
 

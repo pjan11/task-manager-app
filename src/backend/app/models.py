@@ -10,9 +10,8 @@ class List(db.Model):
     name = Column(String(100), nullable=False)
     tasks = relationship('Task', backref='list')
 
-    def __init__(self, name, tasks):
+    def __init__(self, name):
         self.name = name
-        self.tasks = tasks
 
 class Task(db.Model):
     __tablename__ = 'task'
