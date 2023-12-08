@@ -27,6 +27,7 @@ _ 25) Remove card styling, and make it more like a check list
 _ 26) Closing a task is a strikethrough but moves it to the bottom
 _ 27) Closing is more of a toggle and used to flip the current status
 _ 28) Change closed in db to be binary
+_ 29) Add a way to delete a list
 
 
 Notes on daily tasks
@@ -59,3 +60,4 @@ Notes on daily tasks
 * Updated home to have a ListView on the left and the TaskView on the Right
 * ListView has a list of all of the lists in descending order and a button at the end to add a new list
 * Created a dialog for the new list name form
+* Updated the App.scss to use mixins and nesting

@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, TextField, DialogActions } from '@mui/material';
 
 function NewListModal({ open, onClose, handleNewListName, newListName, setNewListName }) {
-
-    const handleFormOnSubmit = () => {
-
-    }
 
     return (
         <Dialog

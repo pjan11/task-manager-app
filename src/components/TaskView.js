@@ -17,6 +17,9 @@ function TaskView({ selectedListId }) {
         setTasks([...tasks, newTask]);
     };
 
+    /*
+        Remove a task from the Open List and add it to the Closed List
+    */
     const closeTask = (index) => {
         const updatedTasks = [...tasks];
         updatedTasks.splice(index, 1);
@@ -27,15 +30,25 @@ function TaskView({ selectedListId }) {
         updateRemainingTime();
     };
 
+    /*
+        Update the total open task time
+    */
     const updateOpenTime = (newOpenTaskTime) => {
         setOpenTaskTime(newOpenTaskTime);
     }
 
+    /*
+        Set the ending time to complete all of the tasks,
+        Update the remaining time -> End time - current time
+    */
     const setTime = (newTime) => {
         setEndTime(newTime);
         updateRemainingTime();
     }
 
+    /*
+        Calculate the remaining time
+    */
     const updateRemainingTime = () => {
         const splitTime = endTime.split(':');
 
@@ -45,6 +58,9 @@ function TaskView({ selectedListId }) {
         setRemainingTime((hours + (minutes / 60)).toFixed(2));
     }
 
+    /*
+        API call to get the tasks by list id
+    */
     const tasksByList = async (listId) => {
         try {
             const response = await fetch(`api/tasks/by-list/${listId}`);
@@ -57,6 +73,9 @@ function TaskView({ selectedListId }) {
         }
     };
 
+    /*
+        Initialize the TaskView with the selected list
+    */
     useEffect(() => {
         if (selectedListId !== null || selectedListId !== undefined) tasksByList(selectedListId);
     }, [selectedListId])

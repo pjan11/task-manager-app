@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NewListModal from './NewListModal';
 import { Button, Typography } from '@mui/material';
+import '../styles/ListView.css';
 
 function ListView({ onSelectList }) {
     const [lists, setLists] = useState([]);
@@ -76,22 +77,22 @@ function ListView({ onSelectList }) {
     }
 
     return (
-        <div>
-            <ul className='card-list'>
+        <div className='card-list'>
+            <ul className='card-item'>
+                <Button onClick={handleOpenDialog} sx={{ mb: 2, mr: 3 }}>
+                    <Typography variant='h5' component='div'>
+                        <i className='fa fa-plus quarternary'></i>
+                    </Typography>
+                </Button>
                 {lists.length > 0 ? (
                     lists.map((list) => (
-                        <Button onClick={() => handleListClick(list)} key={list.id} className='primary-bg-light' sx={{ mb: 2, mr: 3 }}>
+                        <Button onClick={() => handleListClick(list)} key={list.id} className='primary-light-bg' sx={{ mb: 2, mr: 3 }}>
                             <Typography variant='h5' component='div' className='quarternary'>
                                 {list.name}
                             </Typography>
                         </Button>
                     ))
                 ) : null}
-                <Button onClick={handleOpenDialog} className='primary-bg-light' sx={{ mb: 2, mr: 3 }}>
-                    <Typography variant='h5' component='div'>
-                        <i className='fa fa-plus quarternary'></i>
-                    </Typography>
-                </Button>
             </ul>
             <NewListModal
                 open={open}

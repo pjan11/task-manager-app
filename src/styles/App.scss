@@ -34,7 +34,7 @@ $danger: rgb(182, 0, 0);
     }
 }
 
-.primary {
+.primary-light {
     color: $primary-light;
 
     &-bg {
@@ -48,6 +48,10 @@ $danger: rgb(182, 0, 0);
 
 .tertiary {
     color: $tertiary;
+
+    &-bg {
+        @include backgroundColor($tertiary);
+    }
 }
 
 .quarternary {

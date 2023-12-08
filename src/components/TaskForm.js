@@ -7,7 +7,6 @@ function TaskForm({ addTask }) {
 
     async function postTask(task) {
         return fetch('http://localhost:5000/api/tasks', {
-        // fetch('/api/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,11 +22,19 @@ function TaskForm({ addTask }) {
         });
     }
 
+    /*
+        Trim the task name,
+        Post the task to the DB,
+        Add the task to state,
+        Reset the form
+        *** Need to add an error catch if the post fails -> Don't need 
+        to add to state if an error on post occurs
+    */
     async function handleFormOnSubmit(e) {
         e.preventDefault();
         if (task.title.trim === '') return;
         try{
-            const response = await postTask(task);
+            await postTask(task);
             addTask(task);
             setTask({ title: '', status: 'Open', duration: '', list_id: 0 });
         } catch (error) {
