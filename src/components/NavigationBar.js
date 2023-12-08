@@ -5,7 +5,7 @@ import '../styles/NavigationBar.css';
 
 function NavigationBar() {
     return ( 
-        <AppBar position='static' className="bg-quarternary">
+        <AppBar position='static' className="quarternary-bg">
             <Toolbar disableGutters>
                 <div className='navbar'>
                     <ul className='nav-list'>

@@ -7,6 +7,10 @@ $quarternary: #333652;
 $success: rgb(29, 77, 25);
 $danger: rgb(182, 0, 0);
 
+@mixin backgroundColor($color) {
+    background-color: $color !important;
+}
+
 .App {
     display: flex;
     flex-direction: column;
@@ -23,7 +27,19 @@ $danger: rgb(182, 0, 0);
 }
 
 .primary {
-    color: $primary !important;
+    color: $primary;
+
+    &-bg {
+        @include backgroundColor($primary);
+    }
+}
+
+.primary {
+    color: $primary-light;
+
+    &-bg {
+        @include backgroundColor($primary-light);
+    }
 }
 
 .secondary {
@@ -36,16 +52,8 @@ $danger: rgb(182, 0, 0);
 
 .quarternary {
     color: $quarternary;
-}
 
-.bg-primary {
-    background-color: $primary !important;
-}
-
-.bg-primary-light {
-    background-color: $primary-light !important;
-}
-
-.bg-quarternary {
-    background-color: $quarternary !important;
+    &-bg {
+        @include backgroundColor($quarternary);
+    }
 }

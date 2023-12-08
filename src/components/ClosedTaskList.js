@@ -10,7 +10,7 @@ function ClosedTaskList({closedTasks}) {
             {closedTasks.length > 0 ? (
                 <ul className="task-card-list">
                     {closedTasks.map((task, index) => (
-                        <Card key={index} sx={{ mb: 2 }} className='bg-primary-light'>
+                        <Card key={index} sx={{ mb: 2 }} className='primary-bg-light'>
                             <TaskItem title={task.title} status={task.status} duration={task.duration} />
                         </Card>
                     ))}

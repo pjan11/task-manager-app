@@ -24,7 +24,7 @@ function OpenTaskList({ tasks, closeTask, updateOpenTime }) {
             {tasks.length > 0 ? (
                 <ul className='task-card-list'>
                     {tasks.map((task, index) => (
-                        <Card key={index} className='bg-primary-light' sx={{ mb: 2, mr: 3 }}>
+                        <Card key={index} className='primary-bg-light' sx={{ mb: 2, mr: 3 }}>
                             <CardActions disableSpacing sx={{
                                 display: 'flex',
                                 justifyContent: 'flex-end',

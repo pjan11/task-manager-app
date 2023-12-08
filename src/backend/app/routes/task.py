@@ -16,9 +16,7 @@ def get_all_tasks():
 @tasks_bp.route('/api/tasks/by-list/<int:list_id>', methods=['GET'])
 def get_all_tasks_by_list_id(list_id):
     tasks = Task.query.filter_by(list_id=list_id).all()
-
     task_list = [{'id': task.id, 'title': task.title, 'status': task.status, 'duration': task.duration, 'list_id': task.list_id} for task in tasks]
-
     return jsonify(task_list)
 
 #  Create
@@ -43,9 +41,7 @@ def update_task(task_id):
         task.title = data.get('title', task.title)
         task.duration = data.get('duration', task.duration)
         task.status = data.get('status', task.status)
-    
         db.session.commit()
-
         return jsonify({'message': 'Task updated successfully'}), 200
     else:
         return jsonify({'error': 'Task nbt found'}), 404

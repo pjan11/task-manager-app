@@ -5,6 +5,7 @@ from ..models import List, db
 lists_bp = Blueprint('lists', __name__)
 
 # Queries
+
 @lists_bp.route('/api/lists', methods=['GET'])
 def get_all_lists():
     try:
@@ -25,7 +26,6 @@ def create_list():
         new_list_dict = {
             'id': new_list.id,
             'name': new_list.name,
-            # Add any other attributes you want to include
         }
         return jsonify({'message': 'List created', 'list': new_list_dict}), 201
     except Exception as e:
@@ -39,9 +39,7 @@ def update_list(list_id):
 
     if list:
         list.name = data.get('name', list.name)
-    
         db.session.commit()
-
         return jsonify({'message': 'List updated successfully'}), 200
     else:
         return jsonify({'error': 'List nbt found'}), 404

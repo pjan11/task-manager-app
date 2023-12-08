@@ -23,6 +23,10 @@ _ 21) Make new list button float somewhere
 _ 22) Put Completed Tasks below Open tasks?
 _ 23) Add an update time button
 _ 24) Update from hooks to signals
+_ 25) Remove card styling, and make it more like a check list
+_ 26) Closing a task is a strikethrough but moves it to the bottom
+_ 27) Closing is more of a toggle and used to flip the current status
+_ 28) Change closed in db to be binary
 
 
 Notes on daily tasks

@@ -15,12 +15,13 @@ function ListView({ onSelectList }) {
         setOpen(false);
         setNewListName('');
     }
-
+    /*
+        Post a new list and return it's name and id,
+        Add the new list to the lists state,
+        Set the selectedlist from Home component to the newly created list,
+        Close the modal and reset newListName
+    */
     async function handleNewListName() {
-        // Post new list and return it's name and id
-        // add the new list to the lists state
-        // set the selectedlist from Home component to the newly created list
-        // close the modal and reset newListName
         try {
             const response = await postList(newListName);
             setLists([...lists, response.list]);
@@ -48,6 +49,10 @@ function ListView({ onSelectList }) {
         })
     }
 
+    /*
+        Get all of the lists,
+        Set the lists state to the lists from the db
+    */
     function initializeLists() {
         return fetch('http://localhost:5000/api/lists', {
             method: 'GET',
@@ -60,6 +65,7 @@ function ListView({ onSelectList }) {
         .catch((error) => console.error('Error fetching lists', error));
     }
 
+    // initialize the lists on load
     useEffect(() => {
         const data = initializeLists();
         setLists(data);
@@ -74,16 +80,16 @@ function ListView({ onSelectList }) {
             <ul className='card-list'>
                 {lists.length > 0 ? (
                     lists.map((list) => (
-                        <Button onClick={() => handleListClick(list)} key={list.id} className='bg-primary-light' sx={{ mb: 2, mr: 3 }}>
-                            <Typography variant='h5' component='div'>
+                        <Button onClick={() => handleListClick(list)} key={list.id} className='primary-bg-light' sx={{ mb: 2, mr: 3 }}>
+                            <Typography variant='h5' component='div' className='quarternary'>
                                 {list.name}
                             </Typography>
                         </Button>
                     ))
                 ) : null}
-                <Button onClick={handleOpenDialog} className='bg-primary-light' sx={{ mb: 2, mr: 3 }}>
+                <Button onClick={handleOpenDialog} className='primary-bg-light' sx={{ mb: 2, mr: 3 }}>
                     <Typography variant='h5' component='div'>
-                        <i className='fa fa-plus'></i>
+                        <i className='fa fa-plus quarternary'></i>
                     </Typography>
                 </Button>
             </ul>
