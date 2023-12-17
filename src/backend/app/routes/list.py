@@ -46,12 +46,12 @@ def update_list(list_id):
 
 
 # Delete
-@lists_bp.route('/api/lists', methods=['DELETE'])
+@lists_bp.route('/api/lists/<int:list_id>', methods=['DELETE'])
 def delete_list(list_id):
-    list = List.query.get(list_id)
+    list_to_delete = List.query.get(list_id)
 
-    if list is not None:
-        db.session.delete(list)
+    if list_to_delete is not None:
+        db.session.delete(list_to_delete)
         db.session.commit()
         return jsonify({'message': 'List successfully deleted'}), 200
     else:
